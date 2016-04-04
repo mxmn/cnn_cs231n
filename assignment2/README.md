@@ -17,7 +17,7 @@
     - Adam performed better on training, test, and validation sets
       than RMSProp.
 
-## Batch Normalization
+## Batch Normalization Layer
 - Machine learning tends to work better when the input data consists
   of uncorrelated features. While one could normalize (scale,
   variance) the inputs, the activations at deeper layers might still
@@ -28,7 +28,9 @@
   _scale_ parameters for each feature dimension.
 
 
-## Dropout
+## Dropout Layer
+- Helps with regularization a network by setting during the forward
+  pass some randomly selected features to zero.
 
 
 ## ConvNet
