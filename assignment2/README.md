@@ -9,14 +9,23 @@
 - _Solver_
 - Visualization of training loss, and train and test accuracy over the
   iterations and epochs.
-- _Update rules_
+- _Update rules_ for the learning rate
   - SGD + Momentum
-  - RMSProp and Adam: per-parameter learning rate updates using a
-    running average of the second moments of gradients.
+  - RMSProp: similar to Adam, uses per-parameter learning rate updates
+    based on a running average of the second moments of gradients.
+  - Adam:
     - Adam performed better on training, test, and validation sets
       than RMSProp.
 
 ## Batch Normalization
+- Machine learning tends to work better when the input data consists
+  of uncorrelated features. While one could normalize (scale,
+  variance) the inputs, the activations at deeper layers might still
+  become correlated. The batch normalization layers are intended to
+  decorrelate such layers. However, in some networks features with
+  non-zero mean and non-unit variance might be preferrable. To this
+  end, the batch normalization layer includes learnable _shift_ and
+  _scale_ parameters for each feature dimension.
 
 
 ## Dropout
