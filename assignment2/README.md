@@ -9,7 +9,7 @@
 - _Solver_
 - Visualization of training loss, and train and test accuracy over the
   iterations and epochs.
-- _Update rules_ for the learning rate
+- __Update rules__ for the learning rate
   - SGD + Momentum
   - RMSProp: similar to Adam, uses per-parameter learning rate updates
     based on a running average of the second moments of gradients.
@@ -33,7 +33,14 @@
   pass some randomly selected features to zero.
 
 
-## ConvNet
+## Convolutional Networks
+- Convolutional layers
+- Max pooling
+- Convolutional _sandwich_ layers: `conv_relu_pool`, `conv_relu`.
+- Sanity checks:
+  - loss, gradient check
+  - overfit small data
+- *TODO* Spatial Batch Normalization
 
 
 
