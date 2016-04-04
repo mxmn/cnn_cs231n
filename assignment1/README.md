@@ -37,3 +37,4 @@
 - Multiclass SVM on top of the extracted features
   - performs better than when training directly on raw pixels
 - Using Neural Nets with the extracted features is expected to perform even better
+  - TODO: not complete

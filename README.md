@@ -2,6 +2,10 @@
 
 Contains worked-out class assignments with detailed notes.
 
+Class website: http://cs231n.stanford.edu/
+
+Detailed syllabus: http://cs231n.stanford.edu/syllabus.html
+
 ## Assignment 1
 
 - Image classification, SVM, Softmax, NN
