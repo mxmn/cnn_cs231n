@@ -4,6 +4,7 @@
 
 - Easy warm-up
 - CIFAR-10 data
+- Cross-validation
 
 ## SVM Classifier
 
@@ -12,3 +13,9 @@
 - Tuning learning rate
 - Regularization
 - Loss function
+- Numerical gradient check
+
+## Softmax
+
+- Vectorized loss function for the Softmax classifier
+- Its analytic gradient
