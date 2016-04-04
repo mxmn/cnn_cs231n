@@ -52,7 +52,6 @@ class LinearClassifier(object):
       ind = np.random.choice(range(num_train), batch_size, replace=True)
       X_batch = X[ind, :]
       y_batch = y[ind]
-
       #########################################################################
       #                       END OF YOUR CODE                                #
       #########################################################################

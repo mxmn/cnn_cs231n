@@ -98,7 +98,8 @@ class TwoLayerNet(object):
     #############################################################################
     scores -= scores.max()
     denom = np.sum(np.exp(scores), axis=1)
-    loss = np.mean(np.log(denom) - scores[range(N),y]) + 0.5*reg*(np.sum(W1*W1) + np.sum(W2*W2))
+    loss = np.mean(np.log(denom) - scores[range(N),y]) + \
+           0.5*reg*(np.sum(W1*W1) + np.sum(W2*W2))
     #############################################################################
     #                              END OF YOUR CODE                             #
     #############################################################################

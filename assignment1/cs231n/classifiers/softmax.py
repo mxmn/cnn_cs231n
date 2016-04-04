@@ -73,7 +73,6 @@ def softmax_loss_vectorized(W, X, y, reg):
   S -= S.max()
   denom = np.sum(np.exp(S), axis=1)
   loss = np.mean(np.log(denom) - S[range(N),y]) + 0.5*reg*np.sum(W*W)
-
   U = np.exp(S) / np.repeat(denom, C).reshape((N,C))
   Q = np.zeros((N,C)); Q[range(N),y] = 1;
   dW = X.T.dot(U-Q) / N  + reg*W

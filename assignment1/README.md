@@ -19,3 +19,13 @@
 
 - Vectorized loss function for the Softmax classifier
 - Its analytic gradient
+
+## Two-layer Neural Net
+
+- Two-layer fully connected network
+- Forward pass: scores and loss
+- Backward pass: gradient of the loss
+- Experimentation / fine tuning the hyperparameters
+  - One observation: when selectively starting with the weights from a
+    previous trial, one can achieve better results in the long term;
+    these weights can be slightly randomized as well.
