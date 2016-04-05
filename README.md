@@ -1,4 +1,4 @@
-# Convolutional Neural Networks - Stanford 2015
+# Convolutional Neural Networks - Stanford CS231n
 
 Contains worked-out class assignments with detailed notes.
 
