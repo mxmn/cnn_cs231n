@@ -7,6 +7,7 @@ def load_coco_data(base_dir='cs231n/datasets/coco_captioning',
                    max_train=None,
                    pca_features=True):
 
+  cwd = os.getcwd()
   os.chdir(os.environ['HOME']+'/adata/moocs/cnn')
 
   data = {}
@@ -51,6 +52,8 @@ def load_coco_data(base_dir='cs231n/datasets/coco_captioning',
     mask = np.random.randint(num_train, size=max_train)
     data['train_captions'] = data['train_captions'][mask]
     data['train_image_idxs'] = data['train_image_idxs'][mask]
+
+  os.chdir(cwd)
 
   return data
 
