@@ -214,7 +214,25 @@ class CaptioningRNN(object):
     # functions; you'll need to call rnn_step_forward or lstm_step_forward in #
     # a loop.                                                                 #
     ###########################################################################
-    pass
+
+    next_h = features.dot(W_proj) + b_proj
+    # represents: next_h, _ = affine_forward(features, W_proj, b_proj) ### <- f * W + b
+
+    x = np.array([W_embed[self._start],] * N)
+    # represents: x, _ = word_embedding_forward(self._start, W_embed)
+
+    for t in range(max_length):
+        if self.cell_type == "rnn":
+            next_h, _ = rnn_step_forward(x, next_h, Wx, Wh, b)
+
+        scores = y = next_h.dot(W_vocab) + b_vocab
+        # represents: y = affine_forward(next_h, W_vocab, b_vocab)
+
+        captions[:, t] = ix = np.argmax(scores, axis = 1)
+
+        x = W_embed[ix]
+        # represents: x, _ = word_embedding_forward(ix, W_embed)
+
     ############################################################################
     #                             END OF YOUR CODE                             #
     ############################################################################
