@@ -139,6 +139,8 @@ class CaptioningRNN(object):
     out2, cache2 = word_embedding_forward(captions_in, W_embed)
     if self.cell_type == "rnn":
         out3, cache3 = rnn_forward(out2, out1, Wx, Wh, b)
+    else:
+        out3, cache3 = lstm_forward(out2, out1, Wx, Wh, b)
     out4, cache4 = temporal_affine_forward(out3, W_vocab, b_vocab)
     loss, dx = temporal_softmax_loss(out4, captions_out, mask, verbose=False)
 
@@ -146,6 +148,8 @@ class CaptioningRNN(object):
     dx4, dw4, db4 = temporal_affine_backward(dx, cache4)
     if self.cell_type == "rnn":
         dx3, dh03, dWx3, dWh3, db3 = rnn_backward(dx4, cache3)
+    else:
+        dx3, dh03, dWx3, dWh3, db3 = lstm_backward(dx4, cache3)
     dW2 = word_embedding_backward(dx3, cache2)
     dx1, dw1, db1 = affine_backward(dh03, cache1)
 
@@ -217,6 +221,7 @@ class CaptioningRNN(object):
 
     next_h = features.dot(W_proj) + b_proj
     # represents: next_h, _ = affine_forward(features, W_proj, b_proj) ### <- f * W + b
+    next_c = 0
 
     x = np.array([W_embed[self._start],] * N)
     # represents: x, _ = word_embedding_forward(self._start, W_embed)
@@ -224,6 +229,8 @@ class CaptioningRNN(object):
     for t in range(max_length):
         if self.cell_type == "rnn":
             next_h, _ = rnn_step_forward(x, next_h, Wx, Wh, b)
+        else:
+            next_h, next_c, _ = lstm_step_forward(x, next_h, next_c, Wx, Wh, b)
 
         scores = y = next_h.dot(W_vocab) + b_vocab
         # represents: y = affine_forward(next_h, W_vocab, b_vocab)
