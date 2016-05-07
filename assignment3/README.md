@@ -1,14 +1,17 @@
 ## Assignment 3
 
 ### Recurrent Neural Networks (RNNs)
+- [RNN Captioning Notebook](RNN_Captioning.ipynb)
 - Image captioning with Vanilla RNNs
 - MS-COCO dataset
 - Single time step, and full layer forward and backward passes.
 
 ### Long-Short Term Memory (LSTM) RNNs
+- [LSTM Captioning Notebook](LSTM_Captioning.ipynb)
 - Single time step, and full layer forward and backward passes.
 
 ### Image Gradients: Saliency maps and Fooling Images
+- [Image Gradients Notebook](ImageGradients.ipynb)
 - pretrained TinyImageNet model
 - **Saliency map**: looking at backpropagated signature, one can see which
   spatial location of the image contributes the most to the
@@ -28,6 +31,7 @@
     neural networks", ICLR 2014
 
 ### Image Generation: Classes, Inversion, and DeepDream
+- [Image Generation Notebook](ImageGeneration.ipynb)
 - pretrained TinyImageNet model
 - **Class Visualization**: Regularized gradient ascend to create an
   image (from noise) based on class features.
