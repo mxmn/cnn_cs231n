@@ -49,3 +49,10 @@
       Image Representations by Inverting them", CVPR 2015
     - Yosinski et al, "Understanding Neural Networks Through Deep
       Visualization", ICML 2015 Deep Learning Workshop
+- **DeepDream**: fantastika :)
+  - Based on Google's
+    [DeepDream](https://github.com/google/deepdream/blob/master/dream.ipynb),
+    one dreams at selected convolutional layer. The image gets
+    propagated to this layer, and for the backpropagation, one
+    gradient is set to be the same as the activations of this layer.
+  - Check out the deep dreams of the classics by Hopper and Van Gogh!
