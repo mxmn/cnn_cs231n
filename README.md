@@ -1,4 +1,5 @@
-## Stanford CS231n - Convolutional Neural Networks for Visual Recognition
+## Convolutional Neural Networks for Visual Recognition
+### Stanford CS231n
 
 Contains worked-out class assignments with detailed notes.
 
@@ -10,10 +11,10 @@ Detailed syllabus: http://cs231n.stanford.edu/syllabus.html
 
 - Image classification, SVM, Softmax, NN
 
-### Assignment 2
+### [Assignment 2](assignment2/README.md)
 
 - Fully-connected Nets, Batch Normalization, Dropout, Convolutional Nets
 
-### Assignment 3
+### [Assignment 3](assignment3/README.md)
 
 - Recurrent Neural Networks, Image Captioning, Image Gradients, DeepDream
